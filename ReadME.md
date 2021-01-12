@@ -1,6 +1,6 @@
-###TruYum: A restaurant app
 
 
+### TruYum : A Restaurant APP
 
 
 
@@ -18,13 +18,11 @@ _**Run data.html File from LOAD_DATA to Load dummy Data to localStorage**_
 
 ![MainPage](https://user-images.githubusercontent.com/41430322/104333085-db311300-5516-11eb-8ba8-874ecc7fa66e.JPG)
 
-
 ![Admin_interface](https://user-images.githubusercontent.com/41430322/104333095-dcfad680-5516-11eb-8802-211fe886b60b.JPG)
 
-
-![Product_edit_Screen_Admin](https://user-images.githubusercontent.com/41430322/104333097-dec49a00-5516-11eb-8f95-e5b7d45e3782.JPG)
-
+![Product_edit_Screen_Admin](https://user-images.githubusercontent.com/41430322/104334214-1849d500-5518-11eb-86f7-9d4c4a45c86b.JPG)
 
 ![Customer_interface](https://user-images.githubusercontent.com/41430322/104333111-e126f400-5516-11eb-959f-baff640f62f0.JPG)
 
-![Cart_Screen](https://user-images.githubusercontent.com/41430322/104333118-e2582100-5516-11eb-9fbb-ef251ec237b1.JPG)
+![Cart_Screen](https://user-images.githubusercontent.com/41430322/104334240-1ed84c80-5518-11eb-9095-556321675497.JPG)
+

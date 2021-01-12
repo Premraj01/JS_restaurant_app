@@ -1,0 +1,49 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main-page.css" />
+    <title>Main Page</title>
+  </head>
+  <body>
+    <header>
+      <span id="truYum">truYum</span>
+      <img src="spoon_final.png" />
+    </header>
+    <article>
+      <h2>Login As Admin</h2>
+      <a
+        href="menu-item-list-admin.html"
+        target="blank"
+        onclick="setAdmin('admin')"
+        >Admin</a
+      >
+      <br />
+      <br />
+      <h2>Login As Customer</h2>
+      <a
+        href="menu-item-list-customer-notification.html "
+        target="blank"
+        onclick="setAdmin('customer')"
+        >Customer</a
+      >
+    </article>
+    <footer>
+      <span id="copyright">Copyright &#169; 2019</span>
+    </footer>
+    <script>
+      localStorage.removeItem('cart')
+
+      function setAdmin(user) {
+        if (user === 'admin') {
+          localStorage.setItem('user', 'admin')
+        } else if (user === 'customer') {
+          localStorage.setItem('user', 'customer')
+        }
+      }
+    </script>
+  </body>
+</html>

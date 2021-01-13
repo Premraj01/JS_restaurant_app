@@ -75,53 +75,56 @@ function Menu() {
 
 function cart() {
   var cartItems = JSON.parse(localStorage.getItem('cart'))
+  if (cartItems.length <= 0) {
+    window.location.href = './empty-cart.html'
+  } else {
+    var Total = 0
+    var table = document.createElement('table')
 
-  var Total = 0
-  var table = document.createElement('table')
+    for (var i = 0; i < menu.length; i++) {
+      for (var j = 0; j < cartItems.length; j++) {
+        if (menu[i].name === cartItems[j]) {
+          Total = Total + Number(menu[i].Price)
 
-  for (var i = 0; i < menu.length; i++) {
-    for (var j = 0; j < cartItems.length; j++) {
-      if (menu[i].name === cartItems[j]) {
-        Total = Total + Number(menu[i].Price)
+          var cartObject = {
+            menu: menu[i].name,
 
-        var cartObject = {
-          menu: menu[i].name,
-
-          delivery: menu[i].Delivery,
-          price: menu[i].Price,
-        }
-        var row = table.insertRow()
-        var btn = document.createElement('button')
-        var btnTxt = document.createTextNode('Delete')
-
-        btn.appendChild(btnTxt)
-
-        Object.keys(cartObject).forEach(function (k) {
-          var cell = row.insertCell()
-          cell.appendChild(document.createTextNode(cartObject[k]))
-          btn.setAttribute('id', `${menu[i].name}`)
-        })
-        var action = row.insertCell()
-        action.appendChild(btn)
-
-        document.getElementById('menu-card').appendChild(table)
-
-        document.querySelectorAll('#menu-card button').forEach((a) => {
-          a.onclick = (e) => {
-            removeItemFromCart(e.toElement.id)
-            location.reload()
+            delivery: menu[i].Delivery,
+            price: menu[i].Price,
           }
-        })
+          var row = table.insertRow()
+          var btn = document.createElement('button')
+          var btnTxt = document.createTextNode('Delete')
+
+          btn.appendChild(btnTxt)
+
+          Object.keys(cartObject).forEach(function (k) {
+            var cell = row.insertCell()
+            cell.appendChild(document.createTextNode(cartObject[k]))
+            btn.setAttribute('id', `${menu[i].name}`)
+          })
+          var action = row.insertCell()
+          action.appendChild(btn)
+
+          document.getElementById('menu-card').appendChild(table)
+
+          document.querySelectorAll('#menu-card button').forEach((a) => {
+            a.onclick = (e) => {
+              removeItemFromCart(e.toElement.id)
+              location.reload()
+            }
+          })
+        }
       }
     }
-  }
-  var row = table.insertRow()
-  var x = document.createTextNode('Total')
-  var y = document.createTextNode(Total)
+    var row = table.insertRow()
+    var x = document.createTextNode('Total')
+    var y = document.createTextNode(Total)
 
-  row.insertCell().appendChild(x)
-  row.insertCell().appendChild(document.createTextNode(''))
-  row.insertCell().appendChild(y)
+    row.insertCell().appendChild(x)
+    row.insertCell().appendChild(document.createTextNode(''))
+    row.insertCell().appendChild(y)
+  }
 }
 
 function removeItemFromCart(id) {

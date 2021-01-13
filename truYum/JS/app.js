@@ -49,7 +49,7 @@ function Menu() {
       Object.keys(child).forEach(function (k) {
         var cell = row.insertCell()
         cell.appendChild(document.createTextNode(child[k]))
-        x.setAttribute('href', `./check.html`)
+        x.setAttribute('href', `#`)
         x.setAttribute('id', `${menu[i].name}`)
 
         x.appendChild(addToCart)
@@ -86,18 +86,32 @@ function cart() {
 
         var cartObject = {
           menu: menu[i].name,
+
           delivery: menu[i].Delivery,
           price: menu[i].Price,
         }
-
         var row = table.insertRow()
+        var btn = document.createElement('button')
+        var btnTxt = document.createTextNode('Delete')
+
+        btn.appendChild(btnTxt)
 
         Object.keys(cartObject).forEach(function (k) {
           var cell = row.insertCell()
           cell.appendChild(document.createTextNode(cartObject[k]))
+          btn.setAttribute('id', `${menu[i].name}`)
         })
+        var action = row.insertCell()
+        action.appendChild(btn)
 
         document.getElementById('menu-card').appendChild(table)
+
+        document.querySelectorAll('#menu-card button').forEach((a) => {
+          a.onclick = (e) => {
+            removeItemFromCart(e.toElement.id)
+            location.reload()
+          }
+        })
       }
     }
   }
@@ -108,6 +122,15 @@ function cart() {
   row.insertCell().appendChild(x)
   row.insertCell().appendChild(document.createTextNode(''))
   row.insertCell().appendChild(y)
+}
+
+function removeItemFromCart(id) {
+  var cart = JSON.parse(localStorage.getItem('cart'))
+  var idx = cart.indexOf(id)
+  if (cart.length > 0) {
+    cart.splice(idx, 1)
+  }
+  localStorage.setItem('cart', JSON.stringify(cart))
 }
 
 function editMenu() {

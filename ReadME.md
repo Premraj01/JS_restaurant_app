@@ -4,13 +4,13 @@
 
 
 
-This App is developed using pure JavaScript ,Html(For FrontEnd) and css(For Styling)
+This App is developed using Vanilla JavaScript ,Html(For FrontEnd) and css(For Styling)
 
 This is a restaurant application where people can see the menu and can buy the food-items from it the app will also generate the bill 
 **Functionality**
 1. Options to select from menu-card
-2. Option of cart
-3. Bill 
+2. Option of cart to cart and delete from cart
+3. Order Summery
 
 **NOTE:**
 _**Run data.html File from LOAD_DATA to Load dummy Data to localStorage**_
@@ -26,3 +26,4 @@ _**Run data.html File from LOAD_DATA to Load dummy Data to localStorage**_
 
 ![Cart_Screen](https://user-images.githubusercontent.com/41430322/104334240-1ed84c80-5518-11eb-9095-556321675497.JPG)
 
+![delete_cart_Item](https://user-images.githubusercontent.com/41430322/104417412-53d9b300-559b-11eb-95bb-bec41ee185a6.JPG)
